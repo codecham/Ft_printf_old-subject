@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:01:45 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/28 05:01:46 by codecham         ###   ########.fr       */
+/*   Updated: 2021/01/30 03:17:26 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ t_flags		ft_flag_width(va_list args, t_flags flags)
 	return (flags);
 }
 
-int			ft_flag_dot(const char *save, int start,
-			t_flags *flags, va_list args)
+int			ft_flag_dot(const char *save, int start, t_flags *flags, va_list args)
 {
 	int i;
 
@@ -49,6 +48,7 @@ int			ft_flag_dot(const char *save, int start,
 	if (save[i] == '*')
 	{
 		flags->dot = va_arg(args, int);
+		flags->stardot = 1;
 		i++;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:10:30 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/28 23:16:50 by codecham         ###   ########.fr       */
+/*   Updated: 2021/01/30 00:56:17 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static int      ft_treat_u_int(char *str, t_flags flags)
 		flags.width -= flags.dot;
 		char_count += ft_flags_display(flags.width, 0, 0);
 	}
+	else if (flags.star == 1 && flags.minus == 1)
+        char_count += ft_flags_display(flags.width, ft_strlen(str), 0);
 	else
 		char_count += ft_flags_display(flags.width,
 		ft_strlen(str), flags.zero);

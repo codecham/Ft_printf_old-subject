@@ -6,13 +6,13 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:01:56 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/28 23:26:28 by codecham         ###   ########.fr       */
+/*   Updated: 2021/01/29 02:00:07 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int          ft_calcul_size(long n, char *str)
+static int          ft_calcul_size(long n)
 {
     int i;
 
@@ -26,11 +26,12 @@ static int          ft_calcul_size(long n, char *str)
     return(i);
 }
 
-static char         *ft_convert_hexa(long n, char *str, char *base)
+static char         *ft_convert_hexa(long n, char *base)
 {
     int i;
+    char *str;
 
-    i = ft_calcul_size(n, str);
+    i = ft_calcul_size(n);
     if (!(str = (char *)malloc(sizeof(char) * (i + 1))))
 	    return (NULL);
     str[i] = '\0';
@@ -74,7 +75,6 @@ static void         ft_fill_base(char *base, int type)
 char                *ft_itoa_hexa(unsigned long long nbr, int type)
 {
     char base[17];
-    int neg;
     char *str;
 
     if (nbr == 0)
@@ -86,6 +86,6 @@ char                *ft_itoa_hexa(unsigned long long nbr, int type)
         return (str);
     }
     ft_fill_base(base, type);
-    str = ft_convert_hexa(nbr, str, base);
+    str = ft_convert_hexa(nbr, base);
     return(str);
 }

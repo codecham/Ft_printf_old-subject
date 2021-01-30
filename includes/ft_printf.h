@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:04:57 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/28 23:24:31 by codecham         ###   ########.fr       */
+/*   Updated: 2021/01/30 03:00:42 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef	struct		s_flags
 	int				dot;
 	int				star;
 	int				type;
+	int				stardot;
+
 }					t_flags;
 
 int     			ft_printf(const char *input, ...);

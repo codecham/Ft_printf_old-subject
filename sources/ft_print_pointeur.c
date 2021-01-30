@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_pointer.c                                 :+:      :+:    :+:   */
+/*   ft_print_pointeur.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:02:12 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/28 05:02:13 by codecham         ###   ########.fr       */
+/*   Updated: 2021/01/29 01:54:24 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int			ft_print_pointer(unsigned long long p, t_flags flags)
     char *str;
     int char_count;
 
+	char_count = 0;
     if (flags.dot == 0 && p == 0)
     {
         char_count += ft_putstrn("0x", 2);
