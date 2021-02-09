@@ -12,12 +12,12 @@
 
 #include "../includes/ft_printf.h"
 
-int     ft_putstrn(char *str, int n)
+int		ft_putstrn(char *str, int n)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (str[i] && i < n)
-        ft_putchar(str[i++]);
-    return (i);
+	i = 0;
+	while (str[i] && i < n)
+		ft_putchar(str[i++]);
+	return (i);
 }

@@ -12,19 +12,19 @@
 
 #include "../includes/ft_printf.h"
 
-int     ft_flags_display(int size, int minus, int type)
+int		ft_flags_display(int size, int minus, int type)
 {
-    int i;
+	int i;
 
-    i = 0;
-    while (size - minus > 0)
-    {
-        if (type == 1)
-            ft_putchar('0');
-        else
-            ft_putchar(32);
-        size--;
-        i++;
-    }
-    return (i);
+	i = 0;
+	while (size - minus > 0)
+	{
+		if (type == 1)
+			ft_putchar('0');
+		else
+			ft_putchar(32);
+		size--;
+		i++;
+	}
+	return (i);
 }

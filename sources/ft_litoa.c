@@ -14,7 +14,7 @@
 
 static int		ft_size(long nb)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (nb < 0)

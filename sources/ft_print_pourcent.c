@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-int     ft_print_pourcent(t_flags flags)
+int		ft_print_pourcent(t_flags flags)
 {
 	int char_count;
 

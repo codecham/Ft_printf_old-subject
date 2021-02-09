@@ -39,7 +39,8 @@ t_flags		ft_flag_width(va_list args, t_flags flags)
 	return (flags);
 }
 
-int			ft_flag_dot(const char *save, int start, t_flags *flags, va_list args)
+int			ft_flag_dot(const char *save, int start,
+t_flags *flags, va_list args)
 {
 	int i;
 

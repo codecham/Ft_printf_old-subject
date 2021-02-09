@@ -18,7 +18,7 @@ int			ft_flag(const char *save, int i, t_flags *flags, va_list args)
 	{
 		if (!ft_isdigit(save[i]) && !ft_flags_list(save[i])
 		&& !ft_type_list(save[i]))
-			break;
+			break ;
 		if (save[i] == '0' && flags->width == 0 && flags->minus == 0)
 			flags->zero = 1;
 		if (save[i] == '.')
