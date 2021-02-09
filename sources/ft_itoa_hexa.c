@@ -6,13 +6,13 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:01:56 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/29 02:00:07 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/06 23:13:15 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int          ft_calcul_size(long n)
+static int          ft_calcul_size(unsigned long long n)
 {
     int i;
 
@@ -23,10 +23,10 @@ static int          ft_calcul_size(long n)
         i++;
     }
     i++;
-    return(i);
+    return (i);
 }
 
-static char         *ft_convert_hexa(long n, char *base)
+static char         *ft_convert_hexa(unsigned long long n, char *base)
 {
     int i;
     char *str;
@@ -43,7 +43,7 @@ static char         *ft_convert_hexa(long n, char *base)
         i--;
     }
     str[i] = base[n];
-    return(str);
+    return (str);
 }
 
 static void         ft_fill_base(char *base, int type)

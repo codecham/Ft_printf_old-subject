@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:04:57 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/30 03:00:42 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/02 21:10:09 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ int     			ft_print_var(char type, t_flags flags, va_list args);
 int     			ft_print_pourcent(t_flags flags);
 char    			*ft_itoa_hexa(unsigned long long nbr, int type);
 char				*ft_uitoa(unsigned long long nb);
+char				*ft_litoa(long nb);
 
 #endif

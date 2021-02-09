@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:00:10 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/30 20:57:14 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/08 21:28:05 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ static int     ft_treat_save(const char *save, va_list args)
 
     i = 0;
     char_count = 0;
-    while(1)
+    while (1)
     {
         flags = ft_init_flags();
-        if(!save[i])
+        if (!save[i])
             break;
-        else if(save[i] == '%' && save[i + 1])
+        else if (save[i] == '%' && save[i + 1])
         {
             i = ft_flag(save, ++i, &flags, args);
             if (ft_type_list(save[i]))
@@ -69,36 +69,3 @@ int         ft_printf(const char *input, ...)
     free((char *)save);
     return (char_count);
 }
-
-// int main(void)
-// {
-// 	// printf("(-) -> |%0.*d|", -20, -2147483647);
-//     // printf("\n-----------------------------\n");
-// 	// ft_printf("(-) -> |%0.*d|", -20, -2147483647);
-//     // printf("\n-----------------------------\n");
-//     // printf("\n-----------------------------\n");
-//     // // printf("(+) -> |%0.*d|", 20, -2147483647);
-//     // // printf("\n-----------------------------\n");
-// 	// // ft_printf("(+) -> |%0.*d|", 20, -2147483647);
-// }
-
-// int main(void)
-// {
-//     printf("-------SERIE DE TEST--------\n");
-//     //printf("* (+) -> |%*d|\n", 7, -1);
-//     printf(". + * (+) -> |%.*d|\n", 4, -1);
-//     ft_printf(". + * (+) -> |%.*d|\n", 4, -1);
-//     // printf("0 + * (+) -> |%0*d|\n", 4, -1);
-//     printf("\n-----------------------------\n");
-//     //printf("* (-) -> |%*d|\n", -7, -1);
-//     printf(". + * (-) -> |%.*d|\n", -7, -1);
-//     ft_printf(". + * (-) -> |%.*d|\n", -7, -1);
-//     // printf("0 + * (-) -> |%0*d|\n", -7, -1);
-//     printf("\n-----------------------------\n");
-    
-    
-
-//     // printf("0 + 19 (-)|%019d|\n", -1 );
-//     // printf("|%0*d|\n", -4, -1);
-//     // ft_printf("|%0*d|\n", -4, -1);
-// }

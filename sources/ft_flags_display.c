@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:01:35 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/29 18:56:09 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/08 21:16:21 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int     ft_flags_display(int size, int minus, int type)
     i = 0;
     while (size - minus > 0)
     {
-        if(type == 1)
+        if (type == 1)
             ft_putchar('0');
         else
             ft_putchar(32);

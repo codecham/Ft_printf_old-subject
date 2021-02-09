@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:02:05 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/30 00:52:43 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/08 21:18:20 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int     ft_display_hexa(char *str, t_flags flags)
     return (char_count);
 }
 
-static int     ft_treat_hexa(char *str, t_flags flags)
+static int      ft_treat_hexa(char *str, t_flags flags)
 {
         int char_count;
 
@@ -48,7 +48,7 @@ static int     ft_treat_hexa(char *str, t_flags flags)
         return (char_count);
 }
 
-int     ft_print_hexa(unsigned int nbr, int type, t_flags flags)
+int             ft_print_hexa(unsigned int nbr, int type, t_flags flags)
 {
         int char_count;
         char *str;

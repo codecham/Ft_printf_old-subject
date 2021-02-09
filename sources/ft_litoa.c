@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_litoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 19:06:41 by codecham          #+#    #+#             */
-/*   Updated: 2021/02/02 21:07:39 by codecham         ###   ########.fr       */
+/*   Created: 2021/02/02 21:07:13 by codecham          #+#    #+#             */
+/*   Updated: 2021/02/02 21:10:36 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/ft_printf.h"
 
 static int		ft_size(long nb)
 {
@@ -39,15 +39,13 @@ static void		ft_fill_tab(char *tab, long div, long nb, int i)
 	tab[i] = '\0';
 }
 
-char			*ft_itoa(int n)
+char			*ft_litoa(long nb)
 {
-	long	nb;
 	int		size;
 	int		i;
 	long	div;
 	char	*tab;
 
-	nb = (long)n;
 	size = ft_size(nb);
 	i = 0;
 	div = 1;

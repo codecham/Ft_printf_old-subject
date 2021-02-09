@@ -6,13 +6,13 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:02:09 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/30 21:07:45 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/08 21:18:48 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static int     ft_display_number(char *str, int tmp, t_flags flags)
+static int      ft_display_number(char *str, int tmp, t_flags flags)
 {
     int char_count;
 
@@ -25,7 +25,7 @@ static int     ft_display_number(char *str, int tmp, t_flags flags)
     return (char_count);
 }
 
-static int     ft_treat_int(char *str, int tmp, t_flags flags)
+static int      ft_treat_int(char *str, int tmp, t_flags flags)
 {
         int char_count;
 
@@ -48,29 +48,29 @@ static int     ft_treat_int(char *str, int tmp, t_flags flags)
         return (char_count);
 }
 
-int         ft_print_int(int nbr, t_flags flags)
+int             ft_print_int(int nbr, t_flags flags)
 {
     char *str;
     int char_count;
-    int tmp;
+    long tmp;
 
     char_count = 0;
-    tmp = nbr; 
+    tmp = (long)nbr; 
     if (flags.dot == 0 && nbr == 0)
     {
         char_count += ft_flags_display(flags.width, 0, 0);
         return (char_count);
     }
     if (nbr < 0 && (flags.dot >= 0 || flags.zero == 1))
-    {
+    {       
         if((flags.zero == 1 && flags.dot == -1) || (flags.stardot == 1 && flags.dot < 0))
             ft_putstrn("-", 1);
-        nbr *= -1;
+        tmp *= -1;
         flags.width--;
         char_count++;
     }
-    str = ft_itoa(nbr);
-    char_count += ft_treat_int(str, tmp, flags);
+    str = ft_litoa(tmp);
+    char_count += ft_treat_int(str, nbr, flags);
     free (str);
     return (char_count);
 }

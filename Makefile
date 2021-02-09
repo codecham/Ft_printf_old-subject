@@ -4,7 +4,7 @@ N_TEMP = temp.a
 
 NAME = libftprintf.a
 
-SRCS =      ft_printf.c 				\
+SRCS =      ft_printf.c 						\
 			sources/ft_flags_display.c 			\
 			sources/ft_flags_parse.c 			\
 			sources/ft_flags.c					\
@@ -19,7 +19,8 @@ SRCS =      ft_printf.c 				\
 			sources/ft_print_var.c				\
 			sources/ft_uitoa.c					\
 			sources/ft_utils.c					\
-			sources/ft_utils2.c					
+			sources/ft_utils2.c					\
+			sources/ft_litoa.c
 		
 SURPL_O = 	ft_flags_display.o 			\
 			ft_flags_parse.o 			\
@@ -35,7 +36,8 @@ SURPL_O = 	ft_flags_display.o 			\
 			ft_print_var.o				\
 			ft_uitoa.o					\
 			ft_utils.o					\
-			ft_utils2.o					
+			ft_utils2.o					\
+			ft_litoa.o
 
 CC = gcc
 

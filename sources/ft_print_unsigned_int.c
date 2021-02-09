@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:10:30 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/30 00:56:17 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/08 21:19:33 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,5 +61,5 @@ int             ft_print_unsigned_int(unsigned int nbr, t_flags flags)
 	str = ft_uitoa(nbr);
 	char_count += ft_treat_u_int(str, flags);
     free(str);
-    return(char_count);
+    return (char_count);
 }
