@@ -6,32 +6,32 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:01:49 by codecham          #+#    #+#             */
-/*   Updated: 2021/01/30 03:08:42 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/10 17:21:35 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int			ft_flag(const char *save, int i, t_flags *flags, va_list args)
+int			ft_flag(const char *input, int i, t_flags *flags, va_list args)
 {
-	while (save[i])
+	while (input[i])
 	{
-		if (!ft_isdigit(save[i]) && !ft_flags_list(save[i])
-		&& !ft_type_list(save[i]))
+		if (!ft_isdigit(input[i]) && !ft_flags_list(input[i])
+		&& !ft_type_list(input[i]))
 			break ;
-		if (save[i] == '0' && flags->width == 0 && flags->minus == 0)
+		if (input[i] == '0' && flags->width == 0 && flags->minus == 0)
 			flags->zero = 1;
-		if (save[i] == '.')
-			i = ft_flag_dot(save, i, flags, args);
-		if (save[i] == '-')
+		if (input[i] == '.')
+			i = ft_flag_dot(input, i, flags, args);
+		if (input[i] == '-')
 			*flags = ft_flag_minus(*flags);
-		if (save[i] == '*')
+		if (input[i] == '*')
 			*flags = ft_flag_width(args, *flags);
-		if (ft_isdigit(save[i]))
-			*flags = ft_flag_digit(save[i], *flags);
-		if (ft_type_list(save[i]))
+		if (ft_isdigit(input[i]))
+			*flags = ft_flag_digit(input[i], *flags);
+		if (ft_type_list(input[i]))
 		{
-			flags->type = save[i];
+			flags->type = input[i];
 			break ;
 		}
 		i++;

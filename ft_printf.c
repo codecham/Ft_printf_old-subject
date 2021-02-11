@@ -6,7 +6,7 @@
 /*   By: codecham <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/28 05:00:10 by codecham          #+#    #+#             */
-/*   Updated: 2021/02/10 14:21:52 by codecham         ###   ########.fr       */
+/*   Updated: 2021/02/10 17:20:55 by codecham         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_flags			ft_init_flags(void)
 	return (flags);
 }
 
-static int		ft_treat_save(const char *save, va_list args)
+static int		ft_treat_save(const char *input, va_list args)
 {
 	int		i;
 	int		char_count;
@@ -37,18 +37,18 @@ static int		ft_treat_save(const char *save, va_list args)
 	while (1)
 	{
 		flags = ft_init_flags();
-		if (!save[i])
+		if (!input[i])
 			break ;
-		else if (save[i] == '%' && save[i + 1])
+		else if (input[i] == '%' && input[i + 1])
 		{
-			i = ft_flag(save, ++i, &flags, args);
-			if (ft_type_list(save[i]))
+			i = ft_flag(input, ++i, &flags, args);
+			if (ft_type_list(input[i]))
 				char_count += ft_print_var(flags.type, flags, args);
-			else if (save[i])
-				char_count += ft_putchar(save[i]);
+			else if (input[i])
+				char_count += ft_putchar(input[i]);
 		}
-		else if (save[i] != '%')
-			char_count += ft_putchar(save[i]);
+		else if (input[i] != '%')
+			char_count += ft_putchar(input[i]);
 		i++;
 	}
 	return (char_count);
@@ -56,15 +56,12 @@ static int		ft_treat_save(const char *save, va_list args)
 
 int				ft_printf(const char *input, ...)
 {
-	const char		*save;
 	va_list			args;
 	int				char_count;
 
-	save = strdup(input);
 	char_count = 0;
 	va_start(args, input);
-	char_count = char_count + ft_treat_save(save, args);
+	char_count = char_count + ft_treat_save(input, args);
 	va_end(args);
-	free((char *)save);
 	return (char_count);
 }
