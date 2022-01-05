@@ -2,7 +2,7 @@
 
   - 42 school project
   - 2020 / 2021
-  - graded 100% (no bonus)
+  - graded 100%
   - Norm 42
 
 How to use:
